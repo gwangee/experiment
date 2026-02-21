@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.daangn.com)",
+      "Bash(git commit:*)"
+    ]
+  }
+}
