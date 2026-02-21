@@ -1,0 +1,143 @@
+/* ============================================================
+   당케 (Danke) - Design Tokens
+   일식 퓨전 레스토랑의 고급스럽고 감각적인 분위기를 반영한 디자인 시스템
+   ============================================================ */
+
+:root {
+  /* ----------------------------------------------------------
+     COLOR PALETTE
+     다크 계열 베이스 + 골드/웜톤 포인트로 고급스러운 일식 퓨전 분위기
+     ---------------------------------------------------------- */
+
+  /* Primary - 다크 네이비/차콜 (메인 배경, 신뢰감과 고급스러움) */
+  --color-primary-900: #0B0E13;   /* 가장 어두운 배경 */
+  --color-primary-800: #111827;   /* Hero 섹션 배경 */
+  --color-primary-700: #1A1F2E;   /* 섹션 배경 교차 */
+  --color-primary-600: #242B3D;   /* 카드 배경 */
+
+  /* Accent Gold - 포인트 컬러 (CTA, 강조, 고급스러운 포인트) */
+  --color-accent-gold: #C9A96E;       /* 메인 골드 */
+  --color-accent-gold-light: #D4B98A; /* 호버 시 밝은 골드 */
+  --color-accent-gold-dark: #A68B4B;  /* 눌렀을 때 어두운 골드 */
+  --color-accent-gold-muted: rgba(201, 169, 110, 0.15); /* 배경 틴트 */
+
+  /* Warm Neutral - 텍스트 및 보조 (따뜻한 톤으로 일식 분위기) */
+  --color-text-primary: #F5F0E8;      /* 메인 텍스트 (크림 화이트) */
+  --color-text-secondary: #B8AFA3;    /* 보조 텍스트 */
+  --color-text-muted: #7A7268;        /* 비활성 텍스트 */
+
+  /* Semantic Colors */
+  --color-success: #4A9E6D;
+  --color-error: #C75050;
+  --color-info: #5B8DB8;
+
+  /* Surface Colors - 카드, 모달 등 */
+  --color-surface: #1A1F2E;
+  --color-surface-elevated: #242B3D;
+  --color-surface-overlay: rgba(11, 14, 19, 0.85);
+  --color-border: rgba(201, 169, 110, 0.2);
+  --color-border-subtle: rgba(255, 255, 255, 0.06);
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY
+     Noto Serif KR (한글 세리프) + Cormorant Garamond (영문 디스플레이)
+     고급 레스토랑의 격조 있는 타이포그래피
+     ---------------------------------------------------------- */
+
+  /* Font Families */
+  --font-display: 'Cormorant Garamond', 'Noto Serif KR', serif;
+  --font-heading: 'Noto Serif KR', serif;
+  --font-body: 'Noto Sans KR', 'Pretendard', sans-serif;
+  --font-accent: 'Cormorant Garamond', serif;
+
+  /* Font Sizes - 8px 기반 모듈러 스케일 (ratio 1.25) */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 2rem;       /* 32px */
+  --text-4xl: 2.5rem;     /* 40px */
+  --text-5xl: 3.25rem;    /* 52px */
+  --text-6xl: 4rem;       /* 64px */
+  --text-hero: 5rem;      /* 80px - Hero 전용 */
+
+  /* Font Weights */
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Line Heights */
+  --leading-tight: 1.2;
+  --leading-snug: 1.35;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.8;
+
+  /* Letter Spacing */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.1em;
+  --tracking-widest: 0.2em;
+
+  /* ----------------------------------------------------------
+     SPACING - 8px Grid System
+     ---------------------------------------------------------- */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.5rem;    /* 24px */
+  --space-6: 2rem;      /* 32px */
+  --space-8: 3rem;      /* 48px */
+  --space-10: 4rem;     /* 64px */
+  --space-12: 5rem;     /* 80px */
+  --space-16: 7rem;     /* 112px */
+  --space-20: 9rem;     /* 144px */
+
+  /* ----------------------------------------------------------
+     LAYOUT
+     ---------------------------------------------------------- */
+  --container-max: 1200px;
+  --container-narrow: 800px;
+  --container-wide: 1400px;
+  --container-padding: var(--space-5);
+
+  /* ----------------------------------------------------------
+     BORDERS & RADIUS
+     ---------------------------------------------------------- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* ----------------------------------------------------------
+     SHADOWS
+     ---------------------------------------------------------- */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(201, 169, 110, 0.15);
+
+  /* ----------------------------------------------------------
+     TRANSITIONS
+     ---------------------------------------------------------- */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+  --transition-slower: 800ms ease;
+
+  /* ----------------------------------------------------------
+     Z-INDEX Scale
+     ---------------------------------------------------------- */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+}
