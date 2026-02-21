@@ -1,746 +1,610 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="당케(Danke) - 서울 노원구 상계동의 일식 기반 퓨전 레스토랑. 숙성회 코스요리, 스키야키, 소고기 돈까스 등 감각적인 요리와 분위기를 즐기세요.">
-  <meta name="keywords" content="당케, Danke, 상계동 맛집, 일식 퓨전, 숙성회, 코스요리, 데이트 레스토랑, 노원구 맛집">
-  <meta property="og:title" content="당케 Danke - 일식 퓨전 레스토랑 & 바">
-  <meta property="og:description" content="상계동의 숨겨진 명소. 숙성회 코스요리와 감각적인 공간에서 특별한 시간을 보내세요.">
-  <meta property="og:type" content="restaurant">
-  <title>당케 Danke - 일식 퓨전 레스토랑 & 바 | 상계동</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="당케(Danke) - 상계동의 한식 퓨전 레스토랑. 독일어로 감사합니다를 뜻하는 당케, 정성과 감사로 빚은 한식의 새로운 맛." />
+  <meta name="keywords" content="당케, Danke, 상계동 맛집, 한식 퓨전, 레스토랑, 노원구 맛집" />
+  <meta property="og:title" content="당케(Danke) — 감사를 담은 한 그릇" />
+  <meta property="og:description" content="상계동에서 만나는 한식 퓨전 레스토랑 당케. 정직한 재료와 정성 어린 손맛." />
+  <meta property="og:type" content="restaurant" />
+  <title>당케(Danke) — 감사를 담은 한 그릇</title>
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- Google Fonts: Noto Sans KR + Cormorant Garamond + EB Garamond -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+    rel="stylesheet"
+  />
 
-  <!-- Favicon placeholder -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127861;</text></svg>">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ======================================================
-       NAVIGATION
-       투명 배경에서 스크롤 시 반투명 다크 배경으로 전환
-       ====================================================== -->
-  <nav class="nav" id="nav" role="navigation" aria-label="메인 네비게이션">
-    <div class="container">
-      <div class="nav__inner">
-        <!-- 로고: Danke에서 D를 골드 색상으로 강조 -->
-        <a href="#" class="nav__logo" aria-label="당케 홈"><span>D</span>anke</a>
+  <!-- ============================================================
+       SKIP LINK (Accessibility)
+  ============================================================ -->
+  <a href="#main-content" class="skip-link">본문으로 바로가기</a>
 
-        <!-- 데스크톱 메뉴 -->
-        <ul class="nav__links" id="navLinks" role="menubar">
-          <li role="none"><a href="#about" class="nav__link" role="menuitem">소개</a></li>
-          <li role="none"><a href="#menu" class="nav__link" role="menuitem">메뉴</a></li>
-          <li role="none"><a href="#course" class="nav__link" role="menuitem">코스</a></li>
-          <li role="none"><a href="#gallery" class="nav__link" role="menuitem">공간</a></li>
-          <li role="none"><a href="#location" class="nav__link" role="menuitem">오시는 길</a></li>
-          <li role="none">
-            <a href="#reservation" class="nav__cta" role="menuitem">예약하기</a>
-          </li>
+  <!-- ============================================================
+       HEADER / NAVIGATION
+  ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+
+      <!-- Logo -->
+      <a href="#hero" class="logo" aria-label="당케 홈으로 이동">
+        <span class="logo-kr">당케</span>
+        <span class="logo-divider" aria-hidden="true"></span>
+        <span class="logo-en">Danke</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-desktop" aria-label="주요 메뉴">
+        <ul class="nav-list" role="list">
+          <li><a href="#about"    class="nav-link">소개</a></li>
+          <li><a href="#menu"     class="nav-link">메뉴</a></li>
+          <li><a href="#location" class="nav-link">오시는 길</a></li>
+          <li><a href="#contact"  class="nav-link">예약 &amp; 연락</a></li>
         </ul>
+      </nav>
 
-        <!-- 모바일 햄버거 -->
-        <button class="nav__hamburger" id="navHamburger" aria-label="메뉴 열기" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
+      <!-- Header Right Controls -->
+      <div class="header-controls">
+
+        <!-- Theme Toggle -->
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="다크/라이트 모드 전환"
+          title="모드 전환"
+          type="button"
+        >
+          <span class="theme-icon theme-icon--light" aria-hidden="true">
+            <!-- Sun SVG -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </span>
+          <span class="theme-toggle-track" aria-hidden="true">
+            <span class="theme-toggle-thumb"></span>
+          </span>
+          <span class="theme-icon theme-icon--dark" aria-hidden="true">
+            <!-- Moon SVG -->
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+        </button>
+
+        <!-- Mobile Hamburger -->
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="모바일 메뉴 열기"
+          aria-expanded="false"
+          aria-controls="nav-mobile"
+          type="button"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
         </button>
       </div>
     </div>
-  </nav>
 
-  <!-- ======================================================
-       HERO SECTION
-       고객이 사이트에 처음 방문했을 때 5초 안에 레스토랑의 정체성을 파악할 수 있도록
-       브랜드명, 컨셉, CTA를 명확하게 배치
-       ====================================================== -->
-  <section class="hero" id="hero">
-    <!-- 배경: 실제 사용 시 hero-bg.jpg를 레스토랑 대표 이미지로 교체 -->
-    <div class="hero__bg hero__bg--fallback" id="heroBg"></div>
+    <!-- Mobile Navigation Drawer -->
+    <nav
+      class="nav-mobile"
+      id="nav-mobile"
+      aria-label="모바일 메뉴"
+      aria-hidden="true"
+    >
+      <ul class="nav-mobile-list" role="list">
+        <li><a href="#about"    class="nav-mobile-link">소개</a></li>
+        <li><a href="#menu"     class="nav-mobile-link">메뉴</a></li>
+        <li><a href="#location" class="nav-mobile-link">오시는 길</a></li>
+        <li><a href="#contact"  class="nav-mobile-link">예약 &amp; 연락</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="hero__content">
-      <!-- 장식 라인 -->
-      <div class="hero__ornament" aria-hidden="true"></div>
+  <main id="main-content">
 
-      <!-- 상단 라벨 -->
-      <p class="hero__label">Japanese Fusion Restaurant & Bar</p>
-
-      <!-- 메인 타이틀: 브랜드명을 가장 크게 -->
-      <h1 class="hero__title">Danke</h1>
-
-      <!-- 부제: 레스토랑의 핵심 가치를 한 줄로 -->
-      <p class="hero__subtitle">
-        감사의 마음을 담은 한 접시,<br>
-        상계동의 숨겨진 일식 퓨전 다이닝
-      </p>
-
-      <!-- CTA 버튼: 주요 전환 목표(예약)와 탐색(메뉴) -->
-      <div class="hero__actions">
-        <a href="#reservation" class="btn btn--primary">예약하기</a>
-        <a href="#menu" class="btn btn--outline">메뉴 보기</a>
+    <!-- ============================================================
+         HERO SECTION
+    ============================================================ -->
+    <section class="hero" id="hero" aria-label="히어로">
+      <!-- 배경 장식 -->
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-bg-pattern"></div>
+        <div class="hero-bg-overlay"></div>
       </div>
-    </div>
 
-    <!-- 스크롤 다운 힌트 -->
-    <div class="hero__scroll" aria-hidden="true">
-      <span>Scroll</span>
-      <div class="hero__scroll-line"></div>
-    </div>
-  </section>
+      <div class="container hero-content">
+        <p class="hero-eyebrow reveal">Korean Fusion Restaurant · Seoul Nowon</p>
 
-  <!-- ======================================================
-       ABOUT SECTION
-       레스토랑의 이야기를 통해 감정적 연결을 형성
-       좌: 이미지 / 우: 텍스트 (Z패턴 읽기 흐름)
-       ====================================================== -->
-  <section class="section about" id="about">
-    <div class="container">
-      <div class="about__grid">
-        <!-- 좌측: 이미지 -->
-        <div class="about__image-wrapper reveal">
-          <!-- 실제 이미지로 교체: <img src="..." alt="..." class="about__image"> -->
-          <div class="about__image-placeholder">
-            <span class="about__image-placeholder-text">感</span>
-          </div>
-        </div>
+        <h1 class="hero-title reveal">
+          <em class="hero-title-em">감사하는 마음을</em>
+          <span class="hero-title-main">한 그릇에 담다</span>
+        </h1>
 
-        <!-- 우측: 텍스트 콘텐츠 -->
-        <div class="about__content reveal reveal-delay-2">
-          <span class="section-label">About Danke</span>
-          <h2 class="section-title">감사의 마음을<br>요리에 담다</h2>
-          <div class="divider"></div>
-
-          <p class="about__philosophy">
-            "Danke" - 독일어로 감사합니다.<br>
-            찾아주시는 모든 분께 감사의 마음을 담아<br>
-            정성스러운 한 접시를 준비합니다.
-          </p>
-
-          <p class="about__text">
-            상계동 골목 속 작은 공간에서 시작된 당케는
-            일식을 기반으로 한 퓨전 요리와 함께 카페, 바의 매력을
-            한 공간에서 경험할 수 있는 복합 다이닝 공간입니다.
-            엄선된 제철 식재료로 만드는 숙성회 코스부터
-            정통 스키야키, 특제 소고기 돈까스까지
-            매 시즌 새로운 메뉴로 찾아뵙겠습니다.
-          </p>
-
-          <!-- 핵심 특징 4가지 -->
-          <div class="about__features">
-            <div class="about__feature">
-              <div class="about__feature-icon">&#127843;</div>
-              <div class="about__feature-text">
-                <strong>숙성회 전문</strong>
-                최적의 숙성으로 깊은 맛
-              </div>
-            </div>
-            <div class="about__feature">
-              <div class="about__feature-icon">&#127860;</div>
-              <div class="about__feature-text">
-                <strong>코스 요리</strong>
-                참치, 방어, 연어, 돔
-              </div>
-            </div>
-            <div class="about__feature">
-              <div class="about__feature-icon">&#127863;</div>
-              <div class="about__feature-text">
-                <strong>카페 & 바</strong>
-                낮에는 카페, 밤에는 바
-              </div>
-            </div>
-            <div class="about__feature">
-              <div class="about__feature-icon">&#10024;</div>
-              <div class="about__feature-text">
-                <strong>시즌 메뉴</strong>
-                매달 새로운 메뉴 업데이트
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================================================
-       MENU SECTION
-       탭 전환으로 카테고리별 메뉴 탐색
-       고객이 가장 관심을 가지는 정보이므로 시각적으로 매력적으로 구성
-       ====================================================== -->
-  <section class="section menu" id="menu">
-    <div class="container">
-      <!-- 섹션 헤더 -->
-      <div class="menu__header reveal">
-        <span class="section-label">Menu</span>
-        <h2 class="section-title">정성이 담긴 메뉴</h2>
-        <div class="divider divider--center"></div>
-        <p class="section-desc">
-          제철 식재료의 신선함과 셰프의 정성이 만나<br>
-          당케만의 특별한 맛을 선사합니다
+        <p class="hero-subtitle reveal">
+          독일어로 <strong>'감사합니다'</strong>를 뜻하는 당케(Danke).<br />
+          정성과 감사로 빚은 한식 퓨전의 새로운 맛.
         </p>
-      </div>
 
-      <!-- 카테고리 탭 -->
-      <div class="menu__tabs" role="tablist">
-        <button class="menu__tab active" role="tab" aria-selected="true" data-tab="signature">시그니처</button>
-        <button class="menu__tab" role="tab" aria-selected="false" data-tab="sashimi">숙성회</button>
-        <button class="menu__tab" role="tab" aria-selected="false" data-tab="main">메인 요리</button>
-        <button class="menu__tab" role="tab" aria-selected="false" data-tab="bar">바 & 음료</button>
-      </div>
-
-      <!-- 시그니처 메뉴 (기본 활성) -->
-      <div class="menu__category active" id="tab-signature" role="tabpanel">
-        <!-- 메뉴 카드 1: 숙성회 코스 -->
-        <div class="menu__card reveal">
-          <div class="menu__card-image-wrapper">
-            <div class="menu__card-placeholder">鮮</div>
-            <span class="menu__card-badge">Chef's Pick</span>
-          </div>
-          <div class="menu__card-body">
-            <h3 class="menu__card-name">숙성회 코스</h3>
-            <p class="menu__card-desc">참치, 방어, 연어, 돔 등 엄선된 어종을 최적의 숙성 기간을 거쳐 제공하는 시그니처 코스</p>
-            <div class="menu__card-footer">
-              <span class="menu__card-price">55,000원~</span>
-              <span class="menu__card-tag">코스요리</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 메뉴 카드 2: 스키야키 -->
-        <div class="menu__card reveal reveal-delay-1">
-          <div class="menu__card-image-wrapper">
-            <div class="menu__card-placeholder">鍋</div>
-            <span class="menu__card-badge">인기</span>
-          </div>
-          <div class="menu__card-body">
-            <h3 class="menu__card-name">스키야키</h3>
-            <p class="menu__card-desc">달콤한 간장 베이스 육수에 최상급 소고기와 제철 채소를 함께 즐기는 일본식 전골</p>
-            <div class="menu__card-footer">
-              <span class="menu__card-price">38,000원</span>
-              <span class="menu__card-tag">전골</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 메뉴 카드 3: 소고기 돈까스 -->
-        <div class="menu__card reveal reveal-delay-2">
-          <div class="menu__card-image-wrapper">
-            <div class="menu__card-placeholder">肉</div>
-          </div>
-          <div class="menu__card-body">
-            <h3 class="menu__card-name">소고기 돈까스</h3>
-            <p class="menu__card-desc">두툼한 소고기를 바삭하게 튀겨낸 당케 특제 돈까스. 특제 소스와 함께</p>
-            <div class="menu__card-footer">
-              <span class="menu__card-price">28,000원</span>
-              <span class="menu__card-tag">튀김</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 메뉴 카드 4: 스테이크 -->
-        <div class="menu__card reveal reveal-delay-3">
-          <div class="menu__card-image-wrapper">
-            <div class="menu__card-placeholder">焼</div>
-          </div>
-          <div class="menu__card-body">
-            <h3 class="menu__card-name">스테이크</h3>
-            <p class="menu__card-desc">저온 숙성 후 완벽하게 구워낸 스테이크. 특제 와사비 소스와 곁들임 채소</p>
-            <div class="menu__card-footer">
-              <span class="menu__card-price">42,000원</span>
-              <span class="menu__card-tag">그릴</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 메뉴 카드 5: 시즌 스페셜 -->
-        <div class="menu__card reveal reveal-delay-3">
-          <div class="menu__card-image-wrapper">
-            <div class="menu__card-placeholder">季</div>
-            <span class="menu__card-badge">NEW</span>
-          </div>
-          <div class="menu__card-body">
-            <h3 class="menu__card-name">시즌 스페셜</h3>
-            <p class="menu__card-desc">매달 새롭게 선보이는 셰프의 창작 메뉴. 제철 식재료로 만드는 한정 메뉴</p>
-            <div class="menu__card-footer">
-              <span class="menu__card-price">가격 문의</span>
-              <span class="menu__card-tag">한정</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 메뉴 카드 6: 디저트 -->
-        <div class="menu__card reveal reveal-delay-4">
-          <div class="menu__card-image-wrapper">
-            <div class="menu__card-placeholder">甘</div>
-          </div>
-          <div class="menu__card-body">
-            <h3 class="menu__card-name">디저트 플레이트</h3>
-            <p class="menu__card-desc">말차 무스, 유자 파나코타 등 일식 감성의 디저트 모음. 카페 타임에도 인기</p>
-            <div class="menu__card-footer">
-              <span class="menu__card-price">15,000원</span>
-              <span class="menu__card-tag">디저트</span>
-            </div>
-          </div>
+        <div class="hero-actions reveal">
+          <a href="#contact" class="btn btn-primary">예약하기</a>
+          <a href="#menu"    class="btn btn-ghost">메뉴 보기</a>
         </div>
       </div>
 
-      <!-- 숙성회 탭 -->
-      <div class="menu__category" id="tab-sashimi" role="tabpanel">
-        <div class="menu__card">
-          <div class="menu__card-image-wrapper">
-            <div class="menu__card-placeholder">鮪</div>
-            <span class="menu__card-badge">Premium</span>
-          </div>
-          <div class="menu__card-body">
-            <h3 class="menu__card-name">숙성 참치</h3>
-            <p class="menu__card-desc">3일간 저온 숙성하여 감칠맛을 극대화한 참치. 오도로, 주도로, 아카미 구성</p>
-            <div class="menu__card-footer">
-              <span class="menu__card-price">45,000원</span>
-              <span class="menu__card-tag">숙성회</span>
-            </div>
-          </div>
-        </div>
-        <div class="menu__card">
-          <div class="menu__card-image-wrapper">
-            <div class="menu__card-placeholder">鰤</div>
-          </div>
-          <div class="menu__card-body">
-            <h3 class="menu__card-name">숙성 방어</h3>
-            <p class="menu__card-desc">겨울 제철 방어를 최적 숙성. 기름진 풍미와 쫄깃한 식감의 조화</p>
-            <div class="menu__card-footer">
-              <span class="menu__card-price">38,000원</span>
-              <span class="menu__card-tag">숙성회</span>
-            </div>
-          </div>
-        </div>
-        <div class="menu__card">
-          <div class="menu__card-image-wrapper">
-            <div class="menu__card-placeholder">鯛</div>
-          </div>
-          <div class="menu__card-body">
-            <h3 class="menu__card-name">숙성 도미</h3>
-            <p class="menu__card-desc">담백하면서도 깊은 맛이 특징인 도미. 숙성을 통해 감칠맛을 더했습니다</p>
-            <div class="menu__card-footer">
-              <span class="menu__card-price">35,000원</span>
-              <span class="menu__card-tag">숙성회</span>
-            </div>
-          </div>
-        </div>
+      <!-- 스크롤 힌트 -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <span class="scroll-text">Scroll</span>
+        <span class="scroll-bar"></span>
       </div>
+    </section>
 
-      <!-- 메인 요리 탭 -->
-      <div class="menu__category" id="tab-main" role="tabpanel">
-        <div class="menu__card">
-          <div class="menu__card-image-wrapper">
-            <div class="menu__card-placeholder">鍋</div>
-          </div>
-          <div class="menu__card-body">
-            <h3 class="menu__card-name">스키야키 세트</h3>
-            <p class="menu__card-desc">최상급 소고기와 두부, 버섯, 채소가 어우러진 달콤한 간장 전골</p>
-            <div class="menu__card-footer">
-              <span class="menu__card-price">38,000원</span>
-              <span class="menu__card-tag">전골</span>
+    <!-- ============================================================
+         ABOUT SECTION
+    ============================================================ -->
+    <section class="section about" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-grid">
+
+          <!-- Visual Side -->
+          <div class="about-visual reveal">
+            <div class="about-frame">
+              <div class="about-img-placeholder" aria-hidden="true">
+                <span class="about-img-char">丹</span>
+                <span class="about-img-sub">感謝</span>
+              </div>
+              <div class="about-badge">
+                <span class="badge-since">Since</span>
+                <span class="badge-year">2019</span>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="menu__card">
-          <div class="menu__card-image-wrapper">
-            <div class="menu__card-placeholder">肉</div>
-          </div>
-          <div class="menu__card-body">
-            <h3 class="menu__card-name">소고기 돈까스</h3>
-            <p class="menu__card-desc">두꺼운 소고기 등심을 바삭하게 튀겨낸 시그니처 돈까스</p>
-            <div class="menu__card-footer">
-              <span class="menu__card-price">28,000원</span>
-              <span class="menu__card-tag">튀김</span>
-            </div>
-          </div>
-        </div>
-        <div class="menu__card">
-          <div class="menu__card-image-wrapper">
-            <div class="menu__card-placeholder">焼</div>
-          </div>
-          <div class="menu__card-body">
-            <h3 class="menu__card-name">와규 스테이크</h3>
-            <p class="menu__card-desc">마블링이 아름다운 와규를 완벽한 굽기로. 특제 와사비 소스</p>
-            <div class="menu__card-footer">
-              <span class="menu__card-price">42,000원</span>
-              <span class="menu__card-tag">그릴</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 바 & 음료 탭 -->
-      <div class="menu__category" id="tab-bar" role="tabpanel">
-        <div class="menu__card">
-          <div class="menu__card-image-wrapper">
-            <div class="menu__card-placeholder">酒</div>
-          </div>
-          <div class="menu__card-body">
-            <h3 class="menu__card-name">프리미엄 사케</h3>
-            <p class="menu__card-desc">일본 각 지역의 준마이 다이긴죠 사케를 엄선하여 제공합니다</p>
-            <div class="menu__card-footer">
-              <span class="menu__card-price">15,000원~</span>
-              <span class="menu__card-tag">사케</span>
-            </div>
-          </div>
-        </div>
-        <div class="menu__card">
-          <div class="menu__card-image-wrapper">
-            <div class="menu__card-placeholder">杯</div>
-          </div>
-          <div class="menu__card-body">
-            <h3 class="menu__card-name">시그니처 칵테일</h3>
-            <p class="menu__card-desc">유자, 매실, 말차 등 동양적 재료를 활용한 당케만의 오리지널 칵테일</p>
-            <div class="menu__card-footer">
-              <span class="menu__card-price">16,000원</span>
-              <span class="menu__card-tag">칵테일</span>
-            </div>
-          </div>
-        </div>
-        <div class="menu__card">
-          <div class="menu__card-image-wrapper">
-            <div class="menu__card-placeholder">茶</div>
-          </div>
-          <div class="menu__card-body">
-            <h3 class="menu__card-name">스페셜티 커피 & 차</h3>
-            <p class="menu__card-desc">낮에는 스페셜티 원두 핸드드립과 일본 전통차를 즐기실 수 있습니다</p>
-            <div class="menu__card-footer">
-              <span class="menu__card-price">7,000원~</span>
-              <span class="menu__card-tag">카페</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================================================
-       COURSE SECTION
-       숙성회 코스의 흐름을 타임라인으로 시각화
-       고객에게 기대감을 형성하고 코스요리의 가치를 전달
-       ====================================================== -->
-  <section class="section course" id="course">
-    <div class="container">
-      <div class="course__header reveal">
-        <span class="section-label">Course</span>
-        <h2 class="section-title">숙성회 코스의 여정</h2>
-        <div class="divider divider--center"></div>
-        <p class="section-desc" style="margin: 0 auto;">
-          엄선된 식재료가 셰프의 손길을 거쳐<br>
-          하나의 완성된 이야기가 됩니다
-        </p>
-      </div>
-
-      <!-- 코스 타임라인 (가로 스크롤) -->
-      <div class="course__timeline">
-        <div class="course__step reveal">
-          <div class="course__step-number">01</div>
-          <h3 class="course__step-title">아뮤즈부쉬</h3>
-          <p class="course__step-desc">셰프가 준비한 작은 인사.<br>입맛을 깨우는 한 입의 시작</p>
-        </div>
-
-        <div class="course__step reveal reveal-delay-1">
-          <div class="course__step-number">02</div>
-          <h3 class="course__step-title">전채 사시미</h3>
-          <p class="course__step-desc">가볍게 숙성한 흰살 생선으로<br>코스의 서막을 열다</p>
-        </div>
-
-        <div class="course__step reveal reveal-delay-2">
-          <div class="course__step-number">03</div>
-          <h3 class="course__step-title">숙성회 모둠</h3>
-          <p class="course__step-desc">참치, 방어, 연어, 돔<br>최적의 숙성 상태로 제공</p>
-        </div>
-
-        <div class="course__step reveal reveal-delay-3">
-          <div class="course__step-number">04</div>
-          <h3 class="course__step-title">따뜻한 요리</h3>
-          <p class="course__step-desc">스키야키 또는 구이 요리로<br>온도의 변화를 즐기다</p>
-        </div>
-
-        <div class="course__step reveal reveal-delay-4">
-          <div class="course__step-number">05</div>
-          <h3 class="course__step-title">식사 & 디저트</h3>
-          <p class="course__step-desc">특제 마무리 식사와<br>계절 디저트로 여정을 마무리</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================================================
-       GALLERY SECTION
-       레스토랑의 분위기와 감각적 인테리어를 보여주는 이미지 그리드
-       데이트 코스로서의 매력을 시각적으로 전달
-       ====================================================== -->
-  <section class="section gallery" id="gallery">
-    <div class="container--wide">
-      <div class="gallery__header reveal">
-        <span class="section-label">Space</span>
-        <h2 class="section-title text-center">당케의 공간</h2>
-        <div class="divider divider--center"></div>
-      </div>
-
-      <div class="gallery__grid">
-        <!-- 이미지 1 (큰 이미지 2x2) -->
-        <div class="gallery__item reveal">
-          <div class="gallery__item-placeholder">인테리어 전경</div>
-          <div class="gallery__item-overlay">
-            <span class="gallery__item-overlay-icon">+</span>
-          </div>
-        </div>
-        <!-- 이미지 2 -->
-        <div class="gallery__item reveal reveal-delay-1">
-          <div class="gallery__item-placeholder">바 카운터</div>
-          <div class="gallery__item-overlay">
-            <span class="gallery__item-overlay-icon">+</span>
-          </div>
-        </div>
-        <!-- 이미지 3 -->
-        <div class="gallery__item reveal reveal-delay-2">
-          <div class="gallery__item-placeholder">테이블 세팅</div>
-          <div class="gallery__item-overlay">
-            <span class="gallery__item-overlay-icon">+</span>
-          </div>
-        </div>
-        <!-- 이미지 4 -->
-        <div class="gallery__item reveal reveal-delay-3">
-          <div class="gallery__item-placeholder">조명 디테일</div>
-          <div class="gallery__item-overlay">
-            <span class="gallery__item-overlay-icon">+</span>
-          </div>
-        </div>
-        <!-- 이미지 5 -->
-        <div class="gallery__item reveal reveal-delay-4">
-          <div class="gallery__item-placeholder">플레이팅</div>
-          <div class="gallery__item-overlay">
-            <span class="gallery__item-overlay-icon">+</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================================================
-       LOCATION SECTION
-       오시는 길 안내: 지도 + 주소 + 교통 정보
-       상계역 인근 일방통행 골목이라는 특성을 반영하여 상세 안내
-       ====================================================== -->
-  <section class="section location" id="location">
-    <div class="container">
-      <div class="location__grid">
-        <!-- 좌측: 지도 -->
-        <div class="location__map reveal">
-          <!-- 실제 배포 시 카카오맵 또는 네이버맵 API 삽입 -->
-          <div class="location__map-placeholder">
-            <span class="location__map-icon">&#128205;</span>
-            <span>지도 영역</span>
-            <span style="font-size: var(--text-xs);">카카오맵/네이버맵 API 삽입 위치</span>
-          </div>
-        </div>
-
-        <!-- 우측: 오시는 길 정보 -->
-        <div class="location__info reveal reveal-delay-2">
-          <span class="section-label">Location</span>
-          <h2 class="section-title">오시는 길</h2>
-          <div class="divider"></div>
-
-          <div class="location__item">
-            <span class="location__item-icon">&#128205;</span>
-            <div class="location__item-content">
-              <span class="location__item-label">주소</span>
-              <p class="location__item-value">
-                서울 노원구 한글비석로24길 33 1층
-              </p>
-            </div>
+            <!-- 장식 사각형 -->
+            <div class="about-deco-rect" aria-hidden="true"></div>
           </div>
 
-          <div class="location__item">
-            <span class="location__item-icon">&#128337;</span>
-            <div class="location__item-content">
-              <span class="location__item-label">영업시간</span>
-              <p class="location__item-value">
-                카페 11:30 - 17:00<br>
-                디너 17:00 - 22:00 (L.O. 21:00)<br>
-                바  22:00 - 01:00<br>
-                <span style="color: var(--color-text-muted); font-size: var(--text-sm);">매주 월요일 정기 휴무</span>
-              </p>
-            </div>
-          </div>
+          <!-- Text Side -->
+          <div class="about-text">
+            <p class="section-eyebrow reveal">Our Story</p>
+            <h2 class="section-title reveal" id="about-heading">당케의 이야기</h2>
+            <div class="section-rule reveal" aria-hidden="true"></div>
 
-          <div class="location__item">
-            <span class="location__item-icon">&#128222;</span>
-            <div class="location__item-content">
-              <span class="location__item-label">전화</span>
-              <p class="location__item-value">
-                <a href="tel:02-000-0000">02-000-0000</a>
-              </p>
-            </div>
-          </div>
-
-          <!-- 교통편 안내 -->
-          <div class="location__transport">
-            <h3 class="location__transport-title">교통편 안내</h3>
-            <div class="location__transport-item">
-              <span class="location__transport-badge location__transport-badge--line4">4</span>
-              <span>상계역 3번 출구에서 도보 5분</span>
-            </div>
-            <div class="location__transport-item">
-              <span class="location__transport-badge location__transport-badge--line7">7</span>
-              <span>마들역 2번 출구에서 도보 8분</span>
-            </div>
-            <p style="margin-top: var(--space-3); font-size: var(--text-xs); color: var(--color-text-muted);">
-              * 일방통행 골목에 위치하여 차량 이용 시 주변 공영주차장을 이용해 주세요.
+            <p class="about-desc reveal">
+              당케(Danke)는 독일어로 <em>"감사합니다"</em>라는 뜻입니다.
+              음식을 만드는 사람도, 드시는 분도 서로에게 진심으로 감사할 수 있는
+              공간이 되길 바라는 마음에서 이름을 짓게 되었습니다.
             </p>
+            <p class="about-desc reveal">
+              한국의 전통 식재료와 조리법을 바탕으로, 유럽의 정제된 플레이팅과
+              맛의 레이어링을 접목한 당케만의 한식 퓨전을 선보입니다.
+              신선한 제철 식재료와 직접 빚은 장류(醬類)로 완성되는 한 그릇은,
+              드시는 분께 드리는 우리의 진심 어린 감사입니다.
+            </p>
+
+            <ul class="about-values reveal" role="list">
+              <li class="value-item">
+                <span class="value-num" aria-hidden="true">一</span>
+                <span class="value-text">정직한 재료</span>
+              </li>
+              <li class="value-item">
+                <span class="value-num" aria-hidden="true">二</span>
+                <span class="value-text">정성 어린 손맛</span>
+              </li>
+              <li class="value-item">
+                <span class="value-num" aria-hidden="true">三</span>
+                <span class="value-text">감사하는 마음</span>
+              </li>
+            </ul>
           </div>
+
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ======================================================
-       RESERVATION SECTION
-       예약 폼: 전환율(CRO) 최적화를 위해 간결한 필드 구성
-       필수 정보만 받아 예약 완료까지의 마찰을 최소화
-       ====================================================== -->
-  <section class="section reservation" id="reservation">
-    <div class="container">
-      <div class="reservation__grid">
-        <!-- 좌측: 안내 텍스트 -->
-        <div class="reservation__content reveal">
-          <span class="section-label">Reservation</span>
-          <h2 class="section-title">예약 안내</h2>
-          <div class="divider"></div>
+    <!-- ============================================================
+         MENU HIGHLIGHT SECTION
+    ============================================================ -->
+    <section class="section menu-section" id="menu" aria-labelledby="menu-heading">
+      <div class="container">
 
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Signature Menu</p>
+          <h2 class="section-title" id="menu-heading">대표 메뉴</h2>
+          <div class="section-rule" aria-hidden="true"></div>
           <p class="section-desc">
-            특별한 식사를 위해 사전 예약을 권장합니다.
-            코스 요리는 하루 전 예약이 필요하며,
-            당일 방문도 자리가 있는 경우 가능합니다.
+            당케의 철학이 고스란히 담긴 시그니처 메뉴를 소개합니다.
           </p>
+        </div>
 
-          <div class="reservation__contact">
-            <div class="reservation__contact-item">
-              <span class="reservation__contact-icon">&#128222;</span>
-              <span>전화 예약: <a href="tel:02-000-0000">02-000-0000</a></span>
+        <div class="menu-grid">
+
+          <!-- Card 1: 된장 비스크 -->
+          <article class="menu-card reveal" data-delay="0">
+            <div class="menu-card-top">
+              <div class="menu-card-img menu-img-1" aria-hidden="true">
+                <span class="menu-char">된장</span>
+              </div>
+              <span class="menu-badge">Signature</span>
             </div>
-            <div class="reservation__contact-item">
-              <span class="reservation__contact-icon">&#128172;</span>
-              <span>카카오톡 채널: <a href="#">@당케danke</a></span>
+            <div class="menu-card-body">
+              <p class="menu-category">수프 · Soup</p>
+              <h3 class="menu-name">당케 된장 비스크</h3>
+              <p class="menu-desc">
+                전통 된장과 크림을 결합한 당케의 시그니처 수프.
+                깊은 구수함과 부드러운 크리미함의 조화.
+              </p>
+              <div class="menu-footer">
+                <span class="menu-price">18,000원</span>
+                <span class="menu-tag">베스트</span>
+              </div>
             </div>
-            <div class="reservation__contact-item">
-              <span class="reservation__contact-icon">&#128247;</span>
-              <span>인스타그램: <a href="#">@danke_sanggye</a></span>
+          </article>
+
+          <!-- Card 2: 한우 갈비 콩피 -->
+          <article class="menu-card reveal" data-delay="100">
+            <div class="menu-card-top">
+              <div class="menu-card-img menu-img-2" aria-hidden="true">
+                <span class="menu-char">한우</span>
+              </div>
+              <span class="menu-badge">Chef's Pick</span>
+            </div>
+            <div class="menu-card-body">
+              <p class="menu-category">메인 · Main</p>
+              <h3 class="menu-name">한우 갈비 콩피</h3>
+              <p class="menu-desc">
+                24시간 저온 숙성한 한우 갈비에 간장 글라사주를 입혀
+                완성한 당케만의 프리미엄 메인 디쉬.
+              </p>
+              <div class="menu-footer">
+                <span class="menu-price">48,000원</span>
+                <span class="menu-tag">셰프추천</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: 비빔 파스타 -->
+          <article class="menu-card reveal" data-delay="200">
+            <div class="menu-card-top">
+              <div class="menu-card-img menu-img-3" aria-hidden="true">
+                <span class="menu-char">비빔</span>
+              </div>
+            </div>
+            <div class="menu-card-body">
+              <p class="menu-category">파스타 · Pasta</p>
+              <h3 class="menu-name">비빔 파스타 당케</h3>
+              <p class="menu-desc">
+                고추장 소스 베이스에 생면 탈리올리니를 버무린
+                당케의 대표 퓨전 파스타. 매콤하고 감칠맛 넘치는.
+              </p>
+              <div class="menu-footer">
+                <span class="menu-price">22,000원</span>
+                <span class="menu-tag">인기</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: 식혜 판나코타 -->
+          <article class="menu-card reveal" data-delay="300">
+            <div class="menu-card-top">
+              <div class="menu-card-img menu-img-4" aria-hidden="true">
+                <span class="menu-char">식혜</span>
+              </div>
+            </div>
+            <div class="menu-card-body">
+              <p class="menu-category">디저트 · Dessert</p>
+              <h3 class="menu-name">식혜 판나코타</h3>
+              <p class="menu-desc">
+                전통 식혜를 우려낸 달콤한 판나코타에
+                수정과 젤리와 곶감을 올린 당케의 시그니처 디저트.
+              </p>
+              <div class="menu-footer">
+                <span class="menu-price">12,000원</span>
+                <span class="menu-tag">시즌</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="menu-note reveal">
+          <p>전체 메뉴는 방문 또는 전화 문의를 통해 확인하실 수 있습니다.</p>
+          <a href="#contact" class="btn btn-ghost btn-sm">전체 문의</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         QUOTE / DIVIDER SECTION
+    ============================================================ -->
+    <section class="quote-section" aria-label="인용구">
+      <div class="container">
+        <blockquote class="site-quote reveal">
+          <p class="quote-text">
+            "Danke &mdash; <em>감사합니다</em>.<br />
+            모든 한 그릇에 담긴 우리의 진심."
+          </p>
+          <footer class="quote-author">— 당케 셰프 일동</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         LOCATION SECTION
+    ============================================================ -->
+    <section class="section location" id="location" aria-labelledby="location-heading">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Find Us</p>
+          <h2 class="section-title" id="location-heading">오시는 길</h2>
+          <div class="section-rule" aria-hidden="true"></div>
+        </div>
+
+        <div class="location-grid">
+
+          <!-- Map Placeholder -->
+          <div class="location-map reveal" aria-label="레스토랑 지도 위치">
+            <div class="map-box">
+              <div class="map-pin-wrap" aria-hidden="true">
+                <span class="map-pin-dot"></span>
+                <span class="map-pin-ring"></span>
+              </div>
+              <p class="map-name">당케 (Danke)</p>
+              <p class="map-address">서울 노원구 상계동</p>
+              <div class="map-grid-lines" aria-hidden="true">
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- 우측: 예약 폼 -->
-        <div class="reservation__form reveal reveal-delay-2">
-          <form id="reservationForm" novalidate>
-            <div class="form__group">
-              <label for="name" class="form__label">성함 *</label>
-              <input type="text" id="name" name="name" class="form__input" placeholder="예약자 성함" required aria-required="true">
-            </div>
+          <!-- Info Blocks -->
+          <div class="location-info">
 
-            <div class="form__group">
-              <label for="phone" class="form__label">연락처 *</label>
-              <input type="tel" id="phone" name="phone" class="form__input" placeholder="010-0000-0000" required aria-required="true">
-            </div>
-
-            <div class="form__row">
-              <div class="form__group">
-                <label for="date" class="form__label">날짜 *</label>
-                <input type="date" id="date" name="date" class="form__input" required aria-required="true">
+            <div class="info-block reveal">
+              <div class="info-icon" aria-hidden="true">
+                <!-- Location pin -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="1.5"
+                     stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
               </div>
-              <div class="form__group">
-                <label for="time" class="form__label">시간 *</label>
-                <select id="time" name="time" class="form__select" required aria-required="true">
-                  <option value="">시간 선택</option>
-                  <option value="11:30">11:30 (런치)</option>
-                  <option value="12:00">12:00 (런치)</option>
-                  <option value="12:30">12:30 (런치)</option>
-                  <option value="17:00">17:00 (디너)</option>
-                  <option value="17:30">17:30 (디너)</option>
-                  <option value="18:00">18:00 (디너)</option>
-                  <option value="18:30">18:30 (디너)</option>
-                  <option value="19:00">19:00 (디너)</option>
-                  <option value="19:30">19:30 (디너)</option>
-                  <option value="20:00">20:00 (디너)</option>
-                  <option value="20:30">20:30 (디너)</option>
-                </select>
+              <div class="info-body">
+                <h3 class="info-title">주소</h3>
+                <p class="info-text">서울특별시 노원구 상계동 상계로 123</p>
+                <p class="info-sub">노원역 4번 출구 도보 5분</p>
               </div>
             </div>
 
-            <div class="form__row">
-              <div class="form__group">
-                <label for="guests" class="form__label">인원 *</label>
-                <select id="guests" name="guests" class="form__select" required aria-required="true">
-                  <option value="">인원 선택</option>
-                  <option value="1">1명</option>
-                  <option value="2">2명</option>
-                  <option value="3">3명</option>
-                  <option value="4">4명</option>
-                  <option value="5">5명 이상 (전화문의)</option>
-                </select>
+            <div class="info-block reveal">
+              <div class="info-icon" aria-hidden="true">
+                <!-- Clock -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="1.5"
+                     stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
               </div>
-              <div class="form__group">
-                <label for="type" class="form__label">이용 유형</label>
-                <select id="type" name="type" class="form__select">
-                  <option value="">선택 (선택사항)</option>
-                  <option value="course">코스 요리</option>
-                  <option value="ala-carte">단품 주문</option>
-                  <option value="bar">바 이용</option>
-                  <option value="cafe">카페 이용</option>
-                </select>
+              <div class="info-body">
+                <h3 class="info-title">운영시간</h3>
+                <dl class="hours-list">
+                  <div class="hours-row">
+                    <dt class="hours-day">화 — 금</dt>
+                    <dd class="hours-time">11:30 — 21:00</dd>
+                  </div>
+                  <div class="hours-row">
+                    <dt class="hours-day">토 — 일</dt>
+                    <dd class="hours-time">11:00 — 21:30</dd>
+                  </div>
+                  <div class="hours-row hours-closed">
+                    <dt class="hours-day">월요일</dt>
+                    <dd class="hours-time">정기휴무</dd>
+                  </div>
+                </dl>
+                <p class="info-sub">브레이크타임 15:00 — 17:00</p>
               </div>
             </div>
 
-            <div class="form__group">
-              <label for="message" class="form__label">요청사항</label>
-              <textarea id="message" name="message" class="form__textarea" placeholder="알레르기, 기념일, 특별 요청 등을 알려주세요"></textarea>
+            <div class="info-block reveal">
+              <div class="info-icon" aria-hidden="true">
+                <!-- Bus/Transit -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="1.5"
+                     stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="3" width="15" height="13"></rect>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                  <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                  <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+              </div>
+              <div class="info-body">
+                <h3 class="info-title">교통편</h3>
+                <p class="info-text">
+                  지하철 <strong>4·7호선 노원역</strong> 4번 출구
+                </p>
+                <p class="info-sub">버스 1137, 1155, 2115 — 상계역 정류장 하차</p>
+              </div>
             </div>
 
-            <button type="submit" class="btn btn--primary form__submit">예약 요청하기</button>
-            <p style="margin-top: var(--space-3); font-size: var(--text-xs); color: var(--color-text-muted); text-align: center;">
-              예약 요청 후 확인 전화를 드립니다. 당일 예약은 전화로 문의해 주세요.
-            </p>
-          </form>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ======================================================
-       FOOTER
-       ====================================================== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__inner">
-        <div class="footer__logo"><span style="color: var(--color-accent-gold);">D</span>anke</div>
+    <!-- ============================================================
+         CONTACT / RESERVATION SECTION
+    ============================================================ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-heading">
+      <div class="contact-bg" aria-hidden="true"></div>
+      <div class="container contact-inner">
 
-        <!-- 소셜 링크 -->
-        <div class="footer__social">
-          <a href="#" class="footer__social-link" aria-label="인스타그램">
-            <span>IG</span>
-          </a>
-          <a href="#" class="footer__social-link" aria-label="카카오톡">
-            <span>KT</span>
-          </a>
-          <a href="#" class="footer__social-link" aria-label="네이버 블로그">
-            <span>NB</span>
-          </a>
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Reservation &amp; Contact</p>
+          <h2 class="section-title" id="contact-heading">예약 &amp; 연락처</h2>
+          <div class="section-rule" aria-hidden="true"></div>
+          <p class="section-desc">
+            소중한 자리를 위해 미리 예약해 주시면 더욱 편안하게 모시겠습니다.
+          </p>
         </div>
 
-        <p class="footer__copyright">
-          &copy; 2026 Danke. All rights reserved. | 서울 노원구 한글비석로24길 33 1층
-        </p>
+        <div class="contact-grid">
+
+          <!-- 전화 예약 -->
+          <div class="contact-card reveal" data-delay="0">
+            <div class="contact-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.5"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.83a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <h3 class="contact-card-title">전화 예약</h3>
+            <a href="tel:02-123-4567" class="contact-phone">02-123-4567</a>
+            <p class="contact-card-desc">
+              운영시간 내 전화 예약을 받습니다.<br />
+              최소 하루 전 예약을 권장드립니다.
+            </p>
+          </div>
+
+          <!-- Instagram -->
+          <div class="contact-card reveal" data-delay="100">
+            <div class="contact-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.5"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </div>
+            <h3 class="contact-card-title">Instagram</h3>
+            <a
+              href="https://instagram.com/dangke_official"
+              class="contact-sns"
+              target="_blank"
+              rel="noopener noreferrer"
+            >@dangke_official</a>
+            <p class="contact-card-desc">
+              일상 속 당케의 메뉴와 이야기를<br />
+              인스타그램에서 만나보세요.
+            </p>
+          </div>
+
+          <!-- KakaoTalk -->
+          <div class="contact-card reveal" data-delay="200">
+            <div class="contact-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.5"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <h3 class="contact-card-title">카카오톡</h3>
+            <a
+              href="https://pf.kakao.com/dangke"
+              class="contact-sns"
+              target="_blank"
+              rel="noopener noreferrer"
+            >@당케 Danke</a>
+            <p class="contact-card-desc">
+              카카오 채널에서도 예약 및<br />
+              문의를 받고 있습니다.
+            </p>
+          </div>
+
+        </div>
+
+        <aside class="reservation-note reveal" aria-label="단체 예약 안내">
+          <p>
+            <strong>단체 예약(10인 이상)</strong>은 최소 3일 전까지 전화로 문의 부탁드립니다.
+            코스 메뉴 사전 주문도 가능합니다.
+          </p>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <a href="#hero" class="footer-logo" aria-label="당케 상단으로">
+          <span class="logo-kr">당케</span>
+          <span class="logo-divider" aria-hidden="true"></span>
+          <span class="logo-en">Danke</span>
+        </a>
+        <p class="footer-tagline">감사를 담은 한 그릇</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="푸터 메뉴">
+        <ul class="footer-nav-list" role="list">
+          <li><a href="#about">소개</a></li>
+          <li><a href="#menu">메뉴</a></li>
+          <li><a href="#location">오시는 길</a></li>
+          <li><a href="#contact">예약 &amp; 연락</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <address>
+          <p>서울특별시 노원구 상계동 상계로 123</p>
+          <p>
+            <a href="tel:02-123-4567">02-123-4567</a>
+            &nbsp;&middot;&nbsp;
+            <a href="mailto:hello@dangke.kr">hello@dangke.kr</a>
+          </p>
+        </address>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="footer-copy">&copy; 2024 당케(Danke). All rights reserved.</p>
+        <p class="footer-credit">Crafted with gratitude in Seoul</p>
       </div>
     </div>
   </footer>
 
-  <!-- ======================================================
-       JAVASCRIPT
-       ====================================================== -->
-  <script src="js/main.js"></script>
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="맨 위로 이동" type="button">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
 </body>
 </html>
